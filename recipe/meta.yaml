@@ -1,18 +1,18 @@
 {% set name = "numba-scipy" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 78d707dc8ba960fa63da13da2ad744b9d351bb72abf183a99e10d79596dfd30b
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a897a85a21b52ddb4507d70c13577cc55682d015c60c91188c2384747bd29264
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,11 +31,11 @@ test:
     - numba_scipy.special
 
 about:
-  home: "https://github.com/numba/numba-scipy"
+  home: https://github.com/numba/numba-scipy
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "numba-scipy extends Numba to make it aware of SciPy"
+  summary: numba-scipy extends Numba to make it aware of SciPy
 
 extra:
   recipe-maintainers:
