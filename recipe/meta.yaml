@@ -22,10 +22,14 @@ requirements:
   run:
     - python >=3.6
     - numba >=0.45
-    - scipy >=0.16
+    - scipy >=0.16,<1.6.2
     - setuptools
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - numba_scipy
     - numba_scipy.special
