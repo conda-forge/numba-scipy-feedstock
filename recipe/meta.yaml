@@ -1,5 +1,5 @@
 {% set name = "numba-scipy" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a897a85a21b52ddb4507d70c13577cc55682d015c60c91188c2384747bd29264
+  sha256: 700a53187e462591ff45b9118ca84bde29e3be2c43e64bdf692e3d163acf0365
 
 build:
   number: 0
