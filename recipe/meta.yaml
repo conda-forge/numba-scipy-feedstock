@@ -10,7 +10,7 @@ source:
   sha256: 443645d6635c667adc3b38d0a636d9abcc971e78de2c07808d89afcd7bc58444
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.6
     - numba >=0.45
-    - scipy >=0.16,<=1.7.3
+    - scipy >=0.16,<=1.11.0
     - setuptools
 
 test:
