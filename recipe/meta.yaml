@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 443645d6635c667adc3b38d0a636d9abcc971e78de2c07808d89afcd7bc58444
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numba >=0.45
     - scipy >=0.16,<=1.11.0
     - setuptools
@@ -29,6 +29,7 @@ test:
   requires:
     - pip
     - numpy =1.22
+    - python {{ python_min }}
   commands:
     - pip check
   imports:
